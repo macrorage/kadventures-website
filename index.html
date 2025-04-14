@@ -3,171 +3,415 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KAdventures - Official Website</title>
+    <title>KAdventures - Digital Innovation</title>
     <style>
-        /* Modern, clean styling */
+        /* Modern, sleek styling inspired by The Craftsmen */
         :root {
-            --primary-color: #1e3a8a;
-            --secondary-color: #0ea5e9;
-            --text-color: #1f2937;
-            --light-bg: #f3f4f6;
-            --white: #ffffff;
+            --primary-color: #4831D4;
+            --secondary-color: #CCF381;
+            --text-color: #ffffff;
+            --dark-bg: #0F0F0F;
+            --card-bg: #1A1A1A;
+            --accent: #F2F2F2;
+            --transition: all 0.4s ease;
         }
         
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
             line-height: 1.6;
             color: var(--text-color);
             margin: 0;
             padding: 0;
-            background-color: var(--light-bg);
-        }
-        
-        header {
-            background-color: var(--primary-color);
-            color: var(--white);
-            padding: 2rem 0;
-            text-align: center;
+            background-color: var(--dark-bg);
+            overflow-x: hidden;
         }
         
         .container {
             width: 90%;
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
+            padding: 0;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             padding: 2rem 0;
         }
         
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .tagline {
-            font-size: 1.2rem;
-            opacity: 0.9;
-        }
-        
-        section {
-            background-color: var(--white);
-            border-radius: 8px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-        }
-        
-        h2 {
-            color: var(--primary-color);
-            border-bottom: 2px solid var(--secondary-color);
-            padding-bottom: 0.5rem;
-            margin-top: 0;
-        }
-        
-        .services {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-        
-        .service-card {
-            background-color: var(--light-bg);
-            border-radius: 8px;
-            padding: 1.5rem;
-            transition: transform 0.3s ease;
-        }
-        
-        .service-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .service-card h3 {
-            color: var(--primary-color);
-            margin-top: 0;
-        }
-        
-        footer {
-            background-color: var(--primary-color);
-            color: var(--white);
-            text-align: center;
-            padding: 2rem 0;
-            margin-top: 2rem;
-        }
-        
-        .contact-info {
-            margin-top: 1rem;
-        }
-        
-        .contact-info p {
-            margin: 0.5rem 0;
-        }
-        
-        .social-links {
-            margin-top: 1rem;
-        }
-        
-        .social-links a {
-            color: var(--white);
-            margin: 0 0.5rem;
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
             text-decoration: none;
         }
         
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--secondary-color);
+            transition: var(--transition);
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .hero {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 80vh;
+            padding: 2rem 0;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+        }
+        
+        h1 {
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin: 0;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .tagline {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            margin-top: 1rem;
+            margin-bottom: 2rem;
+            color: var(--accent);
+            max-width: 600px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: var(--dark-bg);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            margin-top: 1rem;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(204, 243, 129, 0.3);
+        }
+        
+        .section {
+            padding: 8rem 0;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 4px;
+            bottom: -10px;
+            left: 0;
+            background-color: var(--secondary-color);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .service-card {
+            background-color: var(--card-bg);
+            border-radius: 20px;
+            padding: 2.5rem;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 0;
+            background-color: var(--secondary-color);
+            transition: var(--transition);
+        }
+        
+        .service-card:hover::before {
+            height: 100%;
+        }
+        
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            color: var(--accent);
+        }
+        
+        .about-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .about-image {
+            width: 100%;
+            height: 400px;
+            background-color: var(--primary-color);
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .about-image::before {
+            content: 'K';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 15rem;
+            font-weight: 900;
+            color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .contact-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .contact-form {
+            background-color: var(--card-bg);
+            padding: 3rem;
+            border-radius: 20px;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        footer {
+            background-color: var(--card-bg);
+            padding: 4rem 0 2rem;
+            margin-top: 4rem;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        .footer-links a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .copyright {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
         @media (max-width: 768px) {
-            h1 {
-                font-size: 2rem;
+            .about-section,
+            .contact-section {
+                grid-template-columns: 1fr;
             }
             
-            .services {
-                grid-template-columns: 1fr;
+            .nav-links {
+                display: none;
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>KAdventures</h1>
-        <p class="tagline">Innovative Digital Solutions</p>
-    </header>
-    
     <div class="container">
-        <section>
-            <h2>About Us</h2>
-            <p>KAdventures is a forward-thinking digital company specializing in innovative mobile and web applications. Established in 2025, we focus on creating intuitive, user-friendly digital experiences that help businesses and individuals maximize their potential in today's connected world.</p>
-            <p>Our team of dedicated professionals brings together expertise in software development, user experience design, and digital strategy to deliver solutions that exceed expectations.</p>
+        <nav>
+            <a href="#" class="logo">KAdventures</a>
+            <div class="nav-links">
+                <a href="#services">Services</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </nav>
+        
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Digital Innovation Redefined</h1>
+                <p class="tagline">We create exceptional digital experiences that transform businesses and delight users.</p>
+                <a href="#contact" class="cta-button">Get in touch</a>
+            </div>
         </section>
         
-        <section>
-            <h2>Our Services</h2>
-            <div class="services">
+        <section id="services" class="section">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid">
                 <div class="service-card">
-                    <h3>Mobile App Development</h3>
-                    <p>We design and develop custom iOS applications that deliver exceptional user experiences and solve real-world problems.</p>
+                    <h3>iOS App Development</h3>
+                    <p>We craft premium iOS applications with stunning UI/UX that deliver exceptional experiences and solve real business challenges.</p>
                 </div>
                 <div class="service-card">
                     <h3>Web Development</h3>
-                    <p>Our team creates responsive, modern websites and web applications that engage users and drive results.</p>
+                    <p>Our team builds modern, responsive websites and web applications that engage users and drive meaningful results.</p>
                 </div>
                 <div class="service-card">
                     <h3>Digital Strategy</h3>
-                    <p>We help businesses navigate the digital landscape with strategic planning and implementation of digital solutions.</p>
+                    <p>We help businesses navigate the digital landscape with strategic planning and implementation of innovative solutions.</p>
                 </div>
             </div>
         </section>
         
-        <section>
-            <h2>Our Vision</h2>
-            <p>At KAdventures, we believe in the transformative power of technology. Our vision is to create digital solutions that make a positive impact on businesses and communities. We are committed to innovation, quality, and delivering exceptional value to our clients.</p>
+        <section id="about" class="section">
+            <h2 class="section-title">About Us</h2>
+            <div class="about-section">
+                <div class="about-image"></div>
+                <div class="about-content">
+                    <p>KAdventures is a forward-thinking digital innovation company specializing in creating exceptional digital products and experiences.</p>
+                    <p>Established in 2025, we focus on crafting intuitive, user-centered digital solutions that help businesses and individuals maximize their potential in today's connected world.</p>
+                    <p>Our team brings together expertise in development, design, and strategy to deliver solutions that exceed expectations and create lasting impact.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="contact" class="section">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-section">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">✉</div>
+                        <div>
+                            <h3>Email</h3>
+                            <p>info@kadventures.co.uk</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div>
+                            <h3>Phone</h3>
+                            <p>+44 (0) 123 456 7890</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div>
+                            <h3>Address</h3>
+                            <p>123 Innovation Street<br>London, UK</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <p>We're excited to hear about your project. Get in touch to discuss how we can help bring your vision to life.</p>
+                </div>
+            </div>
         </section>
     </div>
     
     <footer>
         <div class="container">
-            <h2>Contact Us</h2>
-            <div class="contact-info">
-                <p>Email: info@kadventures.co.uk</p>
-                <p>Phone: +44 (0) 123 456 7890</p>
-                <p>Address: 123 Innovation Street, London, UK</p>
+            <div class="footer-content">
+                <div>
+                    <div class="footer-logo">KAdventures</div>
+                    <p>Creating exceptional digital experiences.</p>
+                </div>
+                <div>
+                    <h3>Services</h3>
+                    <div class="footer-links">
+                        <a href="#">iOS Development</a>
+                        <a href="#">Web Development</a>
+                        <a href="#">Digital Strategy</a>
+                    </div>
+                </div>
+                <div>
+                    <h3>Company</h3>
+                    <div class="footer-links">
+                        <a href="#">About Us</a>
+                        <a href="#">Our Work</a>
+                        <a href="#">Contact</a>
+                    </div>
+                </div>
             </div>
-            <div class="social-links">
+            <div class="copyright">
                 <p>© 2025 KAdventures. All rights reserved.</p>
             </div>
         </div>
