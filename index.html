@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KAdventures - Official Website</title>
+    <style>
+        /* Modern, clean styling */
+        :root {
+            --primary-color: #1e3a8a;
+            --secondary-color: #0ea5e9;
+            --text-color: #1f2937;
+            --light-bg: #f3f4f6;
+            --white: #ffffff;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            background-color: var(--light-bg);
+        }
+        
+        header {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        section {
+            background-color: var(--white);
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 0.5rem;
+            margin-top: 0;
+        }
+        
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .service-card {
+            background-color: var(--light-bg);
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .service-card h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+        }
+        
+        footer {
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+        
+        .contact-info {
+            margin-top: 1rem;
+        }
+        
+        .contact-info p {
+            margin: 0.5rem 0;
+        }
+        
+        .social-links {
+            margin-top: 1rem;
+        }
+        
+        .social-links a {
+            color: var(--white);
+            margin: 0 0.5rem;
+            text-decoration: none;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .services {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>KAdventures</h1>
+        <p class="tagline">Innovative Digital Solutions</p>
+    </header>
+    
+    <div class="container">
+        <section>
+            <h2>About Us</h2>
+            <p>KAdventures is a forward-thinking digital company specializing in innovative mobile and web applications. Established in 2025, we focus on creating intuitive, user-friendly digital experiences that help businesses and individuals maximize their potential in today's connected world.</p>
+            <p>Our team of dedicated professionals brings together expertise in software development, user experience design, and digital strategy to deliver solutions that exceed expectations.</p>
+        </section>
+        
+        <section>
+            <h2>Our Services</h2>
+            <div class="services">
+                <div class="service-card">
+                    <h3>Mobile App Development</h3>
+                    <p>We design and develop custom iOS applications that deliver exceptional user experiences and solve real-world problems.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Web Development</h3>
+                    <p>Our team creates responsive, modern websites and web applications that engage users and drive results.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Digital Strategy</h3>
+                    <p>We help businesses navigate the digital landscape with strategic planning and implementation of digital solutions.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Our Vision</h2>
+            <p>At KAdventures, we believe in the transformative power of technology. Our vision is to create digital solutions that make a positive impact on businesses and communities. We are committed to innovation, quality, and delivering exceptional value to our clients.</p>
+        </section>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <h2>Contact Us</h2>
+            <div class="contact-info">
+                <p>Email: info@kadventures.co.uk</p>
+                <p>Phone: +44 (0) 123 456 7890</p>
+                <p>Address: 123 Innovation Street, London, UK</p>
+            </div>
+            <div class="social-links">
+                <p>© 2025 KAdventures. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
