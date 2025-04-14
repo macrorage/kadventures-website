@@ -195,22 +195,50 @@
         
         .about-image {
             width: 100%;
-            height: 400px;
-            background-color: var(--primary-color);
-            border-radius: 20px;
-            position: relative;
-            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 2rem;
         }
         
         .about-image::before {
-            content: 'K';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 15rem;
-            font-weight: 900;
-            color: rgba(255, 255, 255, 0.1);
+            max-width: 350px;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(72, 52, 212, 0.3);
+            transform: perspective(800px) rotateY(5deg);
+            transition: transform 0.5s ease;
+        }
+        
+        .about-image img:hover {
+            transform: perspective(800px) rotateY(0deg);
+        }
+        
+        .about-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            align-items: center;
+        }
+        
+        .about-content p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+        
+        .about-content p:first-child {
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .about-content, .about-image {
+            animation: fadeIn 1s ease forwards;
         }
         
         .contact-section {
